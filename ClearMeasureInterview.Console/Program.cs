@@ -12,7 +12,12 @@ namespace ClearMeasureInterview.Console
         static void Main(string[] args)
         {
             var fb = new FizzBuzzer();
-            var results = fb.DoFizzBuzz(1, 100);
+            var matchers = new List<DivisableMatcher>
+            {
+                new DivisableMatcher(3, "Fizz"),
+                new DivisableMatcher(5, "Buzz")
+            };
+            var results = fb.DoFizzBuzz(1, 100, matchers);
             System.Console.Write(string.Join("\n", results));
         }
     }
